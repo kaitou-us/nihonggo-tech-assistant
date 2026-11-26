@@ -4,7 +4,7 @@ from datetime import datetime
 def format_report(results: dict) -> str:
     #将词汇分析结果格式化为文本报告
     report_lines = ["========================================"]
-    report_lines.append("词汇分析报告")
+    report_lines.append("词汇分析报告 - Developer B")
     report_lines.append("========================================")
     report_lines.append(f"生成时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     report_lines.append(f"总词汇数: {results['total']}")
