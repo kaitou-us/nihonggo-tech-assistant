@@ -1,16 +1,20 @@
 from pathlib import Path
+from datetime import datetime
 
 def format_report(results: dict) -> str:
     #将词汇分析结果格式化为文本报告
-    report_lines = ["词汇分析报告"]
-    
+    report_lines = ["========================================"]
+    report_lines.append("词汇分析报告")
+    report_lines.append("========================================")
+    report_lines.append(f"生成时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     report_lines.append(f"总词汇数: {results['total']}")
     report_lines.append(f"唯一词汇数: {results['unique']}")
     report_lines.append("重复词汇:")
-    if not results['duplicates']:
+    if results['duplicates'] == {}:
         report_lines.append("  无重复词汇")
-    for word, count in results['duplicates'].items():
-        report_lines.append(f"  {word}: {count}")
+    else:
+        for word, count in results['duplicates'].items():
+            report_lines.append(f"  {word}: {count}")
     report_lines.append("词频排名:")
     for i, (word, count) in enumerate(results['ranked'], start=1):
         report_lines.append(f"  {i}. {word}: {count}")
