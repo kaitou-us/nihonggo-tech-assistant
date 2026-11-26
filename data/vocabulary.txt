@@ -1,0 +1,15 @@
+Python
+FastAPI
+データベース
+Python
+機械学習
+API
+FastAPI
+自然言語処理
+Python
+データベース
+Git
+Docker
+API
+例外処理
+機械学習
